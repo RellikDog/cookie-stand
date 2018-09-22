@@ -41,3 +41,43 @@ var pike1 = {
 cooksDay(pike1);
 console.log(pike1.cookiSold);
 console.log(pike1.totalSales);
+
+//seatac
+var seaTac = {
+    minCust: 3,
+    maxCust: 24,
+    avgCook: 1.2,
+    storeHour: 8,
+    cookiSold: [],
+    totalSales: '',
+}
+
+//seacenter
+var seaCenter = {
+    minCust: 11,
+    maxCust: 38,
+    avgCook: 3.7,
+    storeHour: 8,
+    cookiSold: [],
+    totalSales: '',
+}
+
+//cap hill
+var capHill = {
+    minCust: 20,
+    maxCust: 38,
+    avgCook: 2.3,
+    storeHour: 8,
+    cookiSold: [],
+    totalSales: '',
+}
+
+//alki
+var alki = {
+    minCust: 2,
+    maxCust: 16,
+    avgCook: 4.6,
+    storeHour: 8,
+    cookiSold: [],
+    totalSales: '',
+}
