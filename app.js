@@ -1,27 +1,27 @@
 'use strict';
 
 //cookies sold per hour
-var cookSoldPH = function(locat){    
-    var custPerH = function(locat) {
-       return  (Math.round(Math.random()*(locat.maxCust - locat.minCust))+locat.minCust);
-     }   
+var cookSoldPH = function (locat) {
+    var custPerH = function (locat) {
+        return (Math.round(Math.random() * (locat.maxCust - locat.minCust)) + locat.minCust);
+    }
     locat.cookiSold.push(Math.round(custPerH(locat) * locat.avgCook));
 }
 //csph loop
-//csph array pop
-var csphad = function(locat){
-    for(var i = 0; i < locat.storeHour; i++){
-     var x = cookSoldPH(locat); 
+var csphad = function (locat) {
+    for (var i = 0; i < locat.storeHour; i++) {
+        cookSoldPH(locat);
     }
-  //console.log(locat.cookiSold);
-  return locat.cookiSold;
-  }
+
+    //console.log(locat.cookiSold);
+    return locat.cookiSold;
+}
 
 //add up total days sales  
-var cooksDay = function(locat){
+var cooksDay = function (locat) {
     csphad(locat);
     var totalSales = 0;
-    for(var i = 0; i < locat.cookiSold.length; i++){
+    for (var i = 0; i < locat.cookiSold.length; i++) {
         var totalSales = locat.cookiSold[i] + totalSales;
     }
     locat.totalSales = totalSales
@@ -39,8 +39,8 @@ var pike1 = {
 };
 //csphad(pike1);
 cooksDay(pike1);
-console.log(pike1.cookiSold);
-console.log(pike1.totalSales);
+//console.log(pike1.cookiSold);
+//console.log(pike1.totalSales);
 
 //seatac
 var seaTac = {
@@ -50,8 +50,8 @@ var seaTac = {
     storeHour: 8,
     cookiSold: [],
     totalSales: '',
-}
-
+};
+cooksDay(seaTac);
 //seacenter
 var seaCenter = {
     minCust: 11,
@@ -60,8 +60,8 @@ var seaCenter = {
     storeHour: 8,
     cookiSold: [],
     totalSales: '',
-}
-
+};
+cooksDay(seaCenter);
 //cap hill
 var capHill = {
     minCust: 20,
@@ -70,8 +70,8 @@ var capHill = {
     storeHour: 8,
     cookiSold: [],
     totalSales: '',
-}
-
+};
+cooksDay(capHill);
 //alki
 var alki = {
     minCust: 2,
@@ -80,4 +80,5 @@ var alki = {
     storeHour: 8,
     cookiSold: [],
     totalSales: '',
-}
+};
+cooksDay(alki);
