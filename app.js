@@ -30,6 +30,7 @@ var cooksDay = function (locat) {
 
 //1st and pike  
 var pike1 = {
+    name: '1st and Pike',
     minCust: 23,
     maxCust: 65,
     avgCook: 6.3,
@@ -44,6 +45,7 @@ cooksDay(pike1);
 
 //seatac
 var seaTac = {
+    name: 'Seatac Airport',
     minCust: 3,
     maxCust: 24,
     avgCook: 1.2,
@@ -54,6 +56,7 @@ var seaTac = {
 cooksDay(seaTac);
 //seacenter
 var seaCenter = {
+    name: 'Seattle Center',
     minCust: 11,
     maxCust: 38,
     avgCook: 3.7,
@@ -64,6 +67,7 @@ var seaCenter = {
 cooksDay(seaCenter);
 //cap hill
 var capHill = {
+    name: 'Capitol Hill',
     minCust: 20,
     maxCust: 38,
     avgCook: 2.3,
@@ -74,6 +78,7 @@ var capHill = {
 cooksDay(capHill);
 //alki
 var alki = {
+    name: 'Alki',
     minCust: 2,
     maxCust: 16,
     avgCook: 4.6,
