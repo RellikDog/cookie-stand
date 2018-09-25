@@ -105,6 +105,9 @@ pike1.storePop = function(){
         liEl.textContent = this.cookiSold[i];
         ulEl.appendChild(liEl);
     }
+    var totSalesItem = document.createElement('li');
+    totSalesItem.textContent = this.totalSales;
+    ulEl.appendChild(totSalesItem);
     cookStore1.appendChild(ulEl);
 }
     pike1.storePop();
