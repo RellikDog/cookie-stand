@@ -121,7 +121,13 @@ for (var i in this.cookiSold){
 }
 cookStore1.appendChild('ulEl');
 
-
+var store = function(name, min, max, avg, hours){
+    this.name = name;
+    this.min = minCust;
+    this.max = maxCust;
+    this.cookiSold = [];
+    this
+}
 
 
 
