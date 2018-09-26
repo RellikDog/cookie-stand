@@ -1,5 +1,5 @@
 'use strict';
-
+/*var storeHours = ['6am', '7am', '8am', '9am','10 am', '11 am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm' ];**/
 //cookies sold per hour
 var cookSoldPH = function (locat) {
     var custPerH = function (locat) {
@@ -12,7 +12,6 @@ var csphad = function (locat) {
     for (var i = 0; i < locat.storeHour; i++) {
         cookSoldPH(locat);
     }
-
     //console.log(locat.cookiSold);
     return locat.cookiSold;
 }
@@ -26,6 +25,19 @@ var cooksDay = function (locat) {
     }
     locat.totalSales = totalSales;
 }
+//constructor func
+var store = function(name, minCust, maxCust, avgCook, storeHour, cookiSold, totalSales){
+    this.name = name;
+    this.min = minCust;
+    this.max = maxCust;
+    this.avgCook = avgCook;
+    this.storeHour = storeHour;
+    this.cookiSold = cookiSold;
+    this.totalSales = totalSales;
+}
+var pike1 = new store ('1st and Pike');
+
+
 
 
 //1st and pike  
@@ -82,11 +94,11 @@ var alki = {
     totalSales: '',
 };
 //pop arrays an totals
-cooksDay(pike1);
-cooksDay(seaTac);
-cooksDay(seaCenter);
-cooksDay(capHill);
-cooksDay(alki);
+//cooksDay(pike1);
+//cooksDay(seaTac);
+//cooksDay(seaCenter);
+//cooksDay(capHill);
+//cooksDay(alki);
 
 // dom work
 //var cookStore1 = document.getElementById('secId');
@@ -111,6 +123,7 @@ pike1.storePop = function(){
     cookStore1.appendChild(ulEl);
 }
     pike1.storePop();
+
 
 
 /*var ulEl = document.createElement('ul');
