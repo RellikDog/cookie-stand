@@ -41,71 +41,6 @@ var seaCenter = new store ('Seattle Center', 11, 38, 3.7, 15, [], '');
 var capHill = new store ('Capitol Hill', 20, 38, 2.3, 15, [], '');
 var alki = new store ('Alki', 2, 16, 4.6, 15, [], '');
 
-
-
-
-/*
-//1st and pike  
-var pike1 = {
-    name: '1st and Pike',
-    minCust: 23,
-    maxCust: 65,
-    avgCook: 6.3,
-    storeHour: 15,
-    cookiSold: [],
-    totalSales: '',
-};
-//csphad(pike1);
-//console.log(pike1.cookiSold);
-//console.log(pike1.totalSales);
-//seatac
-var seaTac = {
-    name: 'Seatac Airport',
-    minCust: 3,
-    maxCust: 24,
-    avgCook: 1.2,
-    storeHour: 15,
-    cookiSold: [],
-    totalSales: '',
-};
-//seacenter
-var seaCenter = {
-    name: 'Seattle Center',
-    minCust: 11,
-    maxCust: 38,
-    avgCook: 3.7,
-    storeHour: 15,
-    cookiSold: [],
-    totalSales: '',
-};
-//cap hill
-var capHill = {
-    name: 'Capitol Hill',
-    minCust: 20,
-    maxCust: 38,
-    avgCook: 2.3,
-    storeHour: 15,
-    cookiSold: [],
-    totalSales: '',
-};
-//alki
-var alki = {
-    name: 'Alki',
-    minCust: 2,
-    maxCust: 16,
-    avgCook: 4.6,
-    storeHour: 15,
-    cookiSold: [],
-    totalSales: '',
-};
-*/
-//pop arrays an totals
-//cooksDay(pike1);
-//cooksDay(seaTac);
-//cooksDay(seaCenter);
-//cooksDay(capHill);
-//cooksDay(alki);
-
 // dom work
 //var cookStore1 = document.getElementById('secId');
 pike1.storePop = function(){
@@ -173,9 +108,65 @@ var store = function(name, min, max, avg, hours){
     this.cookiSold = [];
     this
 }
-
-
-
-
-
 */
+/*
+//1st and pike  
+var pike1 = {
+    name: '1st and Pike',
+    minCust: 23,
+    maxCust: 65,
+    avgCook: 6.3,
+    storeHour: 15,
+    cookiSold: [],
+    totalSales: '',
+};
+//csphad(pike1);
+//console.log(pike1.cookiSold);
+//console.log(pike1.totalSales);
+//seatac
+var seaTac = {
+    name: 'Seatac Airport',
+    minCust: 3,
+    maxCust: 24,
+    avgCook: 1.2,
+    storeHour: 15,
+    cookiSold: [],
+    totalSales: '',
+};
+//seacenter
+var seaCenter = {
+    name: 'Seattle Center',
+    minCust: 11,
+    maxCust: 38,
+    avgCook: 3.7,
+    storeHour: 15,
+    cookiSold: [],
+    totalSales: '',
+};
+//cap hill
+var capHill = {
+    name: 'Capitol Hill',
+    minCust: 20,
+    maxCust: 38,
+    avgCook: 2.3,
+    storeHour: 15,
+    cookiSold: [],
+    totalSales: '',
+};
+//alki
+var alki = {
+    name: 'Alki',
+    minCust: 2,
+    maxCust: 16,
+    avgCook: 4.6,
+    storeHour: 15,
+    cookiSold: [],
+    totalSales: '',
+};
+*/
+//pop arrays an totals
+//cooksDay(pike1);
+//cooksDay(seaTac);
+//cooksDay(seaCenter);
+//cooksDay(capHill);
+//cooksDay(alki);
