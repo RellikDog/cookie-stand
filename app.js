@@ -28,18 +28,23 @@ var cooksDay = function (locat) {
 //constructor func
 var store = function(name, minCust, maxCust, avgCook, storeHour, cookiSold, totalSales){
     this.name = name;
-    this.min = minCust;
-    this.max = maxCust;
+    this.minCust = minCust;
+    this.maxCust = maxCust;
     this.avgCook = avgCook;
     this.storeHour = storeHour;
     this.cookiSold = cookiSold;
     this.totalSales = totalSales;
 }
-var pike1 = new store ('1st and Pike');
+var pike1 = new store ('1st and Pike', 23, 65, 6.3, 15, [], '');
+var seaTac = new store ('SeaTac Airport', 3, 24, 1.2, 15, [], '');
+var seaCenter = new store ('Seattle Center', 11, 38, 3.7, 15, [], '');
+var capHill = new store ('Capitol Hill', 20, 38, 2.3, 15, [], '');
+var alki = new store ('Alki', 2, 16, 4.6, 15, [], '');
 
 
 
 
+/*
 //1st and pike  
 var pike1 = {
     name: '1st and Pike',
@@ -93,6 +98,7 @@ var alki = {
     cookiSold: [],
     totalSales: '',
 };
+*/
 //pop arrays an totals
 //cooksDay(pike1);
 //cooksDay(seaTac);
@@ -122,7 +128,33 @@ pike1.storePop = function(){
     ulEl.appendChild(totSalesItem);
     cookStore1.appendChild(ulEl);
 }
-    pike1.storePop();
+   
+cooksDay(pike1);
+pike1.storePop();
+
+seaTac.storePop = function(){
+    var cookStore1 = document.getElementById('secId');
+    console.log(cookStore1);
+    //
+    var titEl = document.createElement('h2');
+    titEl.textContent = this.name; 
+    //
+    cookStore1.appendChild(titEl); 
+    //ul   
+    var ulEl = document.createElement('ul');
+    for (var i = 0; i < this.cookiSold.length;i++){
+        var liEl = document.createElement('li');
+        liEl.textContent = this.cookiSold[i];
+        ulEl.appendChild(liEl);
+    }
+    var totSalesItem = document.createElement('li');
+    totSalesItem.textContent = this.totalSales;
+    ulEl.appendChild(totSalesItem);
+    cookStore1.appendChild(ulEl);
+}
+cooksDay(seaTac);
+seaTac.storePop();
+
 
 
 
