@@ -1,4 +1,13 @@
-
+var makeDisShit = function(){
+  makeSHTR();
+  pike1.makeGraphRow();
+  seaTac.makeGraphRow();
+  seaCenter.makeGraphRow();
+  capHill.makeGraphRow();
+  alki.makeGraphRow();
+};
+//makeDisShit();
+//makeTotalsRow();
 
 
 
