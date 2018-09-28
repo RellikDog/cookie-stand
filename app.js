@@ -40,8 +40,27 @@ var seaTac = new store ('SeaTac Airport', 3, 24, 1.2, 15, [], '');
 var seaCenter = new store ('Seattle Center', 11, 38, 3.7, 15, [], '');
 var capHill = new store ('Capitol Hill', 20, 38, 2.3, 15, [], '');
 var alki = new store ('Alki', 2, 16, 4.6, 15, [], '');
+cooksDay(pike1);
+cooksDay(seaTac);
+cooksDay(seaCenter);
+cooksDay(capHill);
+cooksDay(alki);
 
-// dom work
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+//old  dom work
 //var cookStore1 = document.getElementById('secId');
 pike1.storePop = function(){
     var cookStore1 = document.getElementById('secId');
@@ -65,7 +84,7 @@ pike1.storePop = function(){
 }
    
 cooksDay(pike1);
-pike1.storePop();
+//pike1.storePop();
 
 seaTac.storePop = function(){
     var cookStore1 = document.getElementById('secId');
@@ -88,8 +107,8 @@ seaTac.storePop = function(){
     cookStore1.appendChild(ulEl);
 }
 cooksDay(seaTac);
-seaTac.storePop();
-
+//seaTac.storePop();
+*/
 
 
 
