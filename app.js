@@ -1,30 +1,5 @@
 'use strict';
-/*var storeHours = ['6am', '7am', '8am', '9am','10 am', '11 am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm' ];**/
-//cookies sold per hour
-var cookSoldPH = function (locat) {
-    var custPerH = function (locat) {
-        return (Math.round(Math.random() * (locat.maxCust - locat.minCust)) + locat.minCust);
-    }
-    locat.cookiSold.push(Math.round(custPerH(locat) * locat.avgCook));
-}
-//csph loop
-var csphad = function (locat) {
-    for (var i = 0; i < locat.storeHour; i++) {
-        cookSoldPH(locat);
-    }
-    //console.log(locat.cookiSold);
-    return locat.cookiSold;
-}
-
-//add up total days sales  
-var cooksDay = function (locat) {
-    csphad(locat);
-    var totalSales = 0;
-    for (var i = 0; i < locat.cookiSold.length; i++) {
-        var totalSales = locat.cookiSold[i] + totalSales;
-    }
-    locat.totalSales = totalSales;
-}
+var storeHoursOpen = ['', '6am', '7am', '8am', '9am','10 am', '11 am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm', 'Total'];
 //constructor func
 var store = function(name, minCust, maxCust, avgCook, storeHour, cookiSold, totalSales){
     this.name = name;
@@ -40,12 +15,8 @@ var seaTac = new store ('SeaTac Airport', 3, 24, 1.2, 15, [], 0);
 var seaCenter = new store ('Seattle Center', 11, 38, 3.7, 15, [], 0);
 var capHill = new store ('Capitol Hill', 20, 38, 2.3, 15, [], 0);
 var alki = new store ('Alki', 2, 16, 4.6, 15, [], 0);
-//cooksDay(pike1);
-//cooksDay(seaTac);
-//cooksDay(seaCenter);
-//cooksDay(capHill);
-//cooksDay(alki);
 
+//=================================================================
 store.prototype.cookSoldPH = function(){
     var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
     this.cookiSold.push(Math.round(custPerH * this.avgCook));
@@ -63,8 +34,53 @@ store.prototype.cooksDay = function(){
         this.totalSales = this.cookiSold[i] + this.totalSales;
     }
 }
+//pike1.cooksDay();
+//Table rendering
+var makeSHTR = function(){
+   var mytable = document.getElementById('theTable');
+   var trEl = document.createElement('tr');
+        for(var i in storeHoursOpen ){
+        var thEl = document.createElement('th');
+        thEl.textContent = storeHoursOpen[i];
+        trEl.appendChild(thEl); 
+        }
 
-pike1.cooksDay();
+    mytable.appendChild(trEl);
+}
+//makeSHTR();
+//===============================
+store.prototype.makeGraphRow = function(){
+    this.cooksDay();
+    var mytable = document.getElementById('theTable');
+    var trEl = document.createElement('tr');
+        var thEl = document.createElement('th');
+        thEl.textContent = this.name;
+        trEl.appendChild(thEl);
+            for(var i in this.cookiSold){
+                var tdEl = document.createElement('td');
+                tdEl.textContent = this.cookiSold[i];
+                trEl.appendChild(tdEl);
+            }
+            tdEl = document.createElement('td');
+            tdEl.textContent = this.totalSales;
+            trEl.appendChild(tdEl);
+        mytable.appendChild(trEl);
+}
+//pike1.makeGraphRow();
+
+var makeDisShit = function(){
+    makeSHTR();
+    pike1.makeGraphRow();
+    seaTac.makeGraphRow();
+    seaCenter.makeGraphRow();
+    capHill.makeGraphRow();
+    alki.makeGraphRow();
+}
+makeDisShit();
+
+
+
+
 
 
 
@@ -150,6 +166,47 @@ var store = function(name, min, max, avg, hours){
     this
 }
 */
+
+
+//original list pop
+/*//cookies sold per hour
+var cookSoldPH = function (locat) {
+    var custPerH = function (locat) {
+        return (Math.round(Math.random() * (locat.maxCust - locat.minCust)) + locat.minCust);
+    }
+    locat.cookiSold.push(Math.round(custPerH(locat) * locat.avgCook));
+}
+//csph loop
+var csphad = function (locat) {
+    for (var i = 0; i < locat.storeHour; i++) {
+        cookSoldPH(locat);
+    }
+    //console.log(locat.cookiSold);
+    return locat.cookiSold;
+}
+
+//add up total days sales  
+var cooksDay = function (locat) {
+    csphad(locat);
+    var totalSales = 0;
+    for (var i = 0; i < locat.cookiSold.length; i++) {
+        var totalSales = locat.cookiSold[i] + totalSales;
+    }
+    locat.totalSales = totalSales;
+}*/ 
+
+
+//cooksDay(pike1);
+//cooksDay(seaTac);
+//cooksDay(seaCenter);
+//cooksDay(capHill);
+//cooksDay(alki);
+
+
+
+
+
+
 /*
 //1st and pike  
 var pike1 = {
