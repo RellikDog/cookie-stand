@@ -40,13 +40,17 @@ var seaTac = new store ('SeaTac Airport', 3, 24, 1.2, 15, [], '');
 var seaCenter = new store ('Seattle Center', 11, 38, 3.7, 15, [], '');
 var capHill = new store ('Capitol Hill', 20, 38, 2.3, 15, [], '');
 var alki = new store ('Alki', 2, 16, 4.6, 15, [], '');
-cooksDay(pike1);
-cooksDay(seaTac);
-cooksDay(seaCenter);
-cooksDay(capHill);
-cooksDay(alki);
+//cooksDay(pike1);
+//cooksDay(seaTac);
+//cooksDay(seaCenter);
+//cooksDay(capHill);
+//cooksDay(alki);
 
-
+store.prototype.cookSoldPH = function(){
+    var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
+    this.cookiSold.push(Math.round(custPerH * this.avgCook));
+}
+pike1.cookSoldPH();
 
 
 
