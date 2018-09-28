@@ -35,11 +35,11 @@ var store = function(name, minCust, maxCust, avgCook, storeHour, cookiSold, tota
     this.cookiSold = cookiSold;
     this.totalSales = totalSales;
 }
-var pike1 = new store ('1st and Pike', 23, 65, 6.3, 15, [], '');
-var seaTac = new store ('SeaTac Airport', 3, 24, 1.2, 15, [], '');
-var seaCenter = new store ('Seattle Center', 11, 38, 3.7, 15, [], '');
-var capHill = new store ('Capitol Hill', 20, 38, 2.3, 15, [], '');
-var alki = new store ('Alki', 2, 16, 4.6, 15, [], '');
+var pike1 = new store ('1st and Pike', 23, 65, 6.3, 15, [], 0);
+var seaTac = new store ('SeaTac Airport', 3, 24, 1.2, 15, [], 0);
+var seaCenter = new store ('Seattle Center', 11, 38, 3.7, 15, [], 0);
+var capHill = new store ('Capitol Hill', 20, 38, 2.3, 15, [], 0);
+var alki = new store ('Alki', 2, 16, 4.6, 15, [], 0);
 //cooksDay(pike1);
 //cooksDay(seaTac);
 //cooksDay(seaCenter);
@@ -50,16 +50,34 @@ store.prototype.cookSoldPH = function(){
     var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
     this.cookiSold.push(Math.round(custPerH * this.avgCook));
 }
-pike1.cookSoldPH();
+//============================================================
+store.prototype.csphad = function(){
+    for (var i = 0; i < this.storeHour; i++) {
+        this.cookSoldPH();
+    }
+}
+//================================================================pike1.csphad();
+store.prototype.cooksDay = function(){
+    this.csphad();
+    for(var i = 0; i < this.cookiSold.length; i++){
+        this.totalSales = this.cookiSold[i] + this.totalSales;
+    }
+}
+
+pike1.cooksDay();
 
 
 
 
 
-
-
-
-
+/*cooksDay = function (locat) {
+    csphad(locat);
+    var totalSales = 0;
+    for (var i = 0; i < locat.cookiSold.length; i++) {
+        var totalSales = locat.cookiSold[i] + totalSales;
+    }
+    locat.totalSales = totalSales;
+}*/
 
 
 
