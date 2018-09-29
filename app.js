@@ -39,7 +39,7 @@ Store.prototype.cooksDay = function(){
 //Table rendering
 var makeSHTR = function(){
   var mytable = document.getElementById('theTable');
-  var trEl = document.createElement('tr');
+  var trEl = document.createElement('thead');
   for(var i in storeHoursOpen ){
     var thEl = document.createElement('th');
     thEl.textContent = storeHoursOpen[i];
@@ -105,3 +105,5 @@ var makeDisShit2 = function(){
   makeTotalsRow();
 };
 makeDisShit2();
+
+

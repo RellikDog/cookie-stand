@@ -1,4 +1,25 @@
 *{
     background-color: brown;
-   border: 3px dotted #000;
+   /*border: 3px dotted #000;*/
 }
+
+h1{
+    text-align: center;
+    font-size: 120px;
+    font-style: italic;
+}
+table{
+    float: right;
+    margin: 50px;
+    text-align: center;
+    font-size: 25px;
+    border-style: double;
+}
+thead *{
+    border-bottom: solid;
+    border-width: 5px;
+
+}
+
+
+
