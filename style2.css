@@ -9,10 +9,11 @@ h1{
     font-style: italic;
 }
 table{
+    width: 66%;
     float: right;
     margin: 50px;
     text-align: center;
-    font-size: 25px;
+    font-size: 24px;
     border-style: double;
 }
 thead *{
@@ -20,6 +21,15 @@ thead *{
     border-width: 5px;
 
 }
-
+form{
+   float: left;
+    width: 25%;
+    background-color: wheat;
+}
+form *{
+    display: block;
+    text-align: left;
+    background-color: wheat;
+}
 
 

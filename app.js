@@ -94,9 +94,7 @@ var makeTotalsRow = function(){
   trEl.appendChild(thEl);
   myTable.appendChild(trEl);
 };
-
 //=============================================
-
 var makeDisShit2 = function(){
   makeSHTR();
   for(var i in storesArray){
