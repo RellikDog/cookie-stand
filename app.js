@@ -70,10 +70,11 @@ Store.prototype.makeGraphRow = function(){
 var makeTotalsRow = function(){
   //make totals box
   var myTable = document.getElementById('theTable');
-  var trEl = document.createElement('tr');//
+  var tfEl = document.createElement('tfoot');
+  tfEl.setAttribute('id', 'tfooti');
   var thEl = document.createElement('th');
   thEl.textContent = 'Totals';
-  trEl.appendChild(thEl);
+  tfEl.appendChild(thEl);
   //make totals loop
   for(var x = 0; x < 15; x++){
     var allCooksSold = 0;
@@ -82,7 +83,7 @@ var makeTotalsRow = function(){
     }
     thEl = document.createElement('th');
     thEl.textContent = allCooksSold;
-    trEl.appendChild(thEl);
+    tfEl.appendChild(thEl);
   }
   //make totals total
   var totalTotal = 0;
@@ -91,8 +92,8 @@ var makeTotalsRow = function(){
   }
   thEl = document.createElement('th');
   thEl.textContent = totalTotal;
-  trEl.appendChild(thEl);
-  myTable.appendChild(trEl);
+  tfEl.appendChild(thEl);
+  myTable.appendChild(tfEl);
 };
 //=============================================
 var makeDisShit2 = function(){
@@ -103,5 +104,29 @@ var makeDisShit2 = function(){
   makeTotalsRow();
 };
 makeDisShit2();
+
+
+//==================================
+var makeNewStore = function(makeStore){
+  makeStore.preventDefault();
+  makeStore.stopPropagation();
+  var lolol = document.getElementById('tfooti');
+  lolol.parentElement.removeChild(lolol);
+
+  var name = makeStore.target["store-name"].value;
+  var minCust = makeStore.target["store-min"].value;
+  var maxCust = makeStore.target["store-max"].value;
+  var avgCook = parseInt(makeStore.target["store-avg"].value);
+  var openHours = makeStore.target["store-hours"].value;
+  console.log(name, minCust, maxCust, avgCook); 
+  var objName = new Store(name, minCust, maxCust, avgCook, openHours, [], 0 );
+  storesArray.push(objName);
+  objName.makeGraphRow();
+  makeTotalsRow();
+  console.log(makeNewStore);
+}
+var storeForm = document.getElementById('makeStoreForm');
+storeForm.addEventListener('submit', makeNewStore);
+
 
 
