@@ -19,7 +19,7 @@ var alki = new Store ('Alki', 2, 16, 4.6, 15, [], 0);
 var storesArray = [pike1, seaTac, seaCenter, capHill, alki];
 //=================================================================
 Store.prototype.cookSoldPH = function(){
-  var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
+  var custPerH = Math.ceil((Math.random() * ((this.maxCust - this.minCust) + 1)) + this.minCust);
   this.cookiSold.push(Math.round(custPerH * this.avgCook));
 };
 //============================================================
@@ -28,7 +28,7 @@ Store.prototype.csphad = function(){
     this.cookSoldPH();
   }
 };
-//================================================================pike1.csphad();
+//================================================================
 Store.prototype.cooksDay = function(){
   this.csphad();
   for(var i = 0; i < this.cookiSold.length; i++){
@@ -120,8 +120,8 @@ var makeNewStore = function(makeStore){
   var openHours = makeStore.target["store-hours"].value;
   console.log(name, minCust, maxCust, avgCook); 
   var objName = new Store(name, minCust, maxCust, avgCook, openHours, [], 0 );
-  storesArray.push(objName);
   objName.makeGraphRow();
+  storesArray.push(objName);
   makeTotalsRow();
   console.log(makeNewStore);
 }
