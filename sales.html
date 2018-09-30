@@ -19,15 +19,40 @@
     </ul>
 </nav>
 <section id="secId">
-<img src="pics/salmonplzno.jpg">
-<table id="theTable">
+<form id="makeStoreForm">
+    <fieldset>
+        <legend>Generate New Store</legend>
+        <label for="store-name">New store name</label>    
+        <input name="store-name" type="text" />
+
+        <label for="store-min">Min customers per hour</label>    
+        <input name="store-min" type="number" />
+
+        <label for="store-max">Max customers per hour</label>    
+        <input name="store-max" type="number" />
+
+        <label for="store-avg">Average cookies sold per hour</label>    
+        <input name="store-avg" type="text" />
+
+        <label for="store-hours">Hours open</label>    
+        <input name="store-hours" type="number" />
+    
+        <button type="submit"> Generate </button>
+        
+    
+    
+    </fieldset>
+</form>
+
+
+    <table id="theTable">
 
 </table>
 
 
 
 </section>
-
+<img src="pics/salmonplzno.jpg">
     
 <script src="app.js"></script>
 </body>
