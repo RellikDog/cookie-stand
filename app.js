@@ -19,7 +19,7 @@ var alki = new Store('Alki', 2, 16, 4.6, 15, [], 0);
 var storesArray = [pike1, seaTac, seaCenter, capHill, alki];
 //=================================================================
 Store.prototype.cookSoldPH = function () {
-  var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
+  var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)+1) + this.minCust);
   this.cookiSold.push(Math.round(custPerH * this.avgCook));
   console.log(custPerH);
 };
