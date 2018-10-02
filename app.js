@@ -15,12 +15,13 @@ var seaTac = new Store('SeaTac Airport', 3, 24, 1.2, 15, [], 0);
 var seaCenter = new Store('Seattle Center', 11, 38, 3.7, 15, [], 0);
 var capHill = new Store('Capitol Hill', 20, 38, 2.3, 15, [], 0);
 var alki = new Store('Alki', 2, 16, 4.6, 15, [], 0);
-
+//===================
 var storesArray = [pike1, seaTac, seaCenter, capHill, alki];
 //=================================================================
 Store.prototype.cookSoldPH = function () {
-  var custPerH = Math.ceil((Math.random() * ((this.maxCust - this.minCust) + 1)) + this.minCust);
+  var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
   this.cookiSold.push(Math.round(custPerH * this.avgCook));
+  console.log(custPerH);
 };
 //============================================================
 Store.prototype.csphad = function () {
@@ -76,7 +77,7 @@ var makeTotalsRow = function () {
   thEl.textContent = 'Totals';
   tfEl.appendChild(thEl);
   //make totals loop
-  for (var x = 0; x < 15; x++) {
+  for (var x = 0; x < storeHoursOpen.length - 2; x++) {
     var allCooksSold = 0;
     for (var i in storesArray) {
       allCooksSold = storesArray[i].cookiSold[x] + allCooksSold;
@@ -104,8 +105,6 @@ var makeDisShit2 = function () {
   makeTotalsRow();
 };
 makeDisShit2();
-
-
 //==================================
 var makeNewStore = function (makeStore) {
   makeStore.preventDefault();
@@ -114,14 +113,14 @@ var makeNewStore = function (makeStore) {
   lolol.parentElement.removeChild(lolol);
 
   var name = makeStore.target['store-name'].value;
-  var minCust = makeStore.target['store-min'].value;
-  var maxCust = makeStore.target['store-max'].value;
+  var minCust = parseInt(makeStore.target['store-min'].value);
+  var maxCust = parseInt(makeStore.target['store-max'].value);
   var avgCook = parseInt(makeStore.target['store-avg'].value);
   var openHours = makeStore.target['store-hours'].value;
   // console.log(name, minCust, maxCust, avgCook);
   var objName = new Store(name, minCust, maxCust, avgCook, openHours, [], 0);
-  objName.makeGraphRow();
   storesArray.push(objName);
+  objName.makeGraphRow();
   makeTotalsRow();
   // console.log(makeNewStore);
 };
