@@ -1,4 +1,19 @@
 *{
     background-color: brown;
-   /*border: 3px dotted #000;*/
+   border: 3px dotted #000;
+   position: relative;
+}
+body{
+    width: 960px;
+    position: relative;
+}
+#mainPic{
+    width: 100%;
+}
+.onOhThree{
+    width: 300px;
+    margin: 10px;
+}
+#infoSection{
+    float: right;
 }

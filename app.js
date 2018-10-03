@@ -19,7 +19,7 @@ var alki = new Store('Alki', 2, 16, 4.6, 15, [], 0);
 var storesArray = [pike1, seaTac, seaCenter, capHill, alki];
 //=================================================================
 Store.prototype.cookSoldPH = function () {
-  var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)+1) + this.minCust);
+  var custPerH = Math.round((Math.random() * (this.maxCust - this.minCust)) + this.minCust);
   this.cookiSold.push(Math.round(custPerH * this.avgCook));
   console.log(custPerH);
 };
@@ -36,7 +36,6 @@ Store.prototype.cooksDay = function () {
     this.totalSales = this.cookiSold[i] + this.totalSales;
   }
 };
-//pike1.cooksDay();
 //Table rendering
 var makeSHTR = function () {
   var mytable = document.getElementById('theTable');
@@ -117,12 +116,10 @@ var makeNewStore = function (makeStore) {
   var maxCust = parseInt(makeStore.target['store-max'].value);
   var avgCook = parseInt(makeStore.target['store-avg'].value);
   var openHours = makeStore.target['store-hours'].value;
-  // console.log(name, minCust, maxCust, avgCook);
   var objName = new Store(name, minCust, maxCust, avgCook, openHours, [], 0);
   storesArray.push(objName);
   objName.makeGraphRow();
   makeTotalsRow();
-  // console.log(makeNewStore);
 };
 var storeForm = document.getElementById('makeStoreForm');
 storeForm.addEventListener('submit', makeNewStore);

@@ -1,6 +1,6 @@
 *{
     background-color: brown;
-   /*border: 3px dotted #000;*/
+    /*border: 3px dotted #000;*/
 }
 
 h1{
@@ -30,6 +30,17 @@ form *{
     display: block;
     text-align: left;
     background-color: wheat;
+}
+tfoot *{
+    border-top: solid;
+    border-width: 5px;
+    border-collapse: collapse;
+}
+tfoot{
+    border-collapse: collapse;
+}
+#mainPic{
+    width: 960px;
 }
 
 
