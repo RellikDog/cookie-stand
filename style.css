@@ -1,6 +1,6 @@
 *{
     background-color: brown;
-   border: 3px dotted #000;
+   /*border: 3px dotted #000;*/
    position: relative;
 }
 body{
@@ -11,10 +11,22 @@ body{
     width: 100%;
 }
 .onOhThree{
-    width: 300px;
+    width: 30%;
     margin: 10px;
 }
 #infoSection{
     position: relative;
     float: right;
+    top: -500px;
+}
+#famPic{
+    top: -250px;
+    width: 600px;
+}
+#shirtPic{
+    left: -50px;
+}
+#frostPic{
+    top: -250px;
+    left: 300px;
 }
