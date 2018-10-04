@@ -15,5 +15,6 @@ body{
     margin: 10px;
 }
 #infoSection{
+    position: relative;
     float: right;
 }
