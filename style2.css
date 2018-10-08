@@ -1,6 +1,6 @@
 *{
     background-color: brown;
-    /*border: 3px dotted #000;*/
+    /* border: 3px dotted #000; */
 }
 
 h1{
@@ -42,5 +42,10 @@ tfoot{
 #mainPic{
     width: 960px;
 }
-
-
+header img{
+    position: relative;
+    top: -260px;
+}
+header{
+    height: 290px;
+}

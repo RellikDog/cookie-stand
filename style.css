@@ -30,3 +30,8 @@ body{
     top: -250px;
     left: 300px;
 }
+footer{
+    background-image: url(pics/chinook.jpg);
+    height: 737px;
+    top: -200px;
+}
