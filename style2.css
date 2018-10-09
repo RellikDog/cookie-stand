@@ -42,10 +42,10 @@ tfoot{
 #mainPic{
     width: 960px;
 }
-header img{
+#picId{
     position: relative;
     top: -260px;
 }
-header{
+#headerId{
     height: 290px;
 }
